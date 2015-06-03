@@ -5,7 +5,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>EventHubRecieverApp</Name>
     <RootNamespace>EventHubRecieverApp</RootNamespace>
-    <NameOfLastUsedPublishProfile>esp8266hub</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>esp8266gateway</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -36,6 +36,7 @@
     <Compile Include="config.js" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="esp8266gateway.pubxml" />
     <Content Include="package.json" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />

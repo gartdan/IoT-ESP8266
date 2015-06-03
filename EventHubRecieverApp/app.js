@@ -29,9 +29,10 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function (req, res) {
-    res.write("sup");
-})
-    ;
+    res.send("sup");
+});
+
+
 app.get('/sensorData', function (req, res) {
     var temp = req.query.temp;
     var humidity = req.query.humidity;
