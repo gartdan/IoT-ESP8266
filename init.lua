@@ -1,0 +1,16 @@
+print("Bootup starting")
+print("Connecting to wifi")
+wifi.setmode(wifi.STATION)
+wifi.sta.config("ATT4g9g9m8","6v22553v553d")
+wifi.sta.connect()
+tmr.delay(3000000)   -- wait 1,000,000 us = 1 second
+print(wifi.sta.status())
+print(wifi.sta.getip())
+print("Connected to wifi")
+print("Sleeping for 10 seconds")
+tmr.delay(10000000)
+print(wifi.sta.status())
+print(wifi.sta.getip())
+print("Initiating the timer job")
+
+tmr.alarm(2, 10000, 1, function() dofile("dht_loop.lua")  end )

@@ -1,0 +1,17 @@
+{
+  "name": "EventHubRecieverApp",
+  "version": "0.0.0",
+  "description": "EventHubRecieverApp",
+  "main": "app.js",
+  "author": {
+    "name": "dgartne",
+    "email": ""
+  },
+  "dependencies": {
+    "eventhubs-js": "^1.0.1",
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*",
+    "event-hub-client": "noodlefrenzy/event-hub-client"
+  }
+}
