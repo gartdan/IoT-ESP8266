@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="configYouUpdate.js" />
     <Compile Include="config.js" />
   </ItemGroup>
   <ItemGroup>

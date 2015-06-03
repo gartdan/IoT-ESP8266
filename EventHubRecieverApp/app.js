@@ -4,7 +4,6 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 
@@ -29,19 +28,20 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/about', routes.about);
-app.get('/contact', routes.contact);
+app.get('/', function (req, res) {
+    res.write("sup");
+})
+    ;
 app.get('/sensorData', function (req, res) {
     var temp = req.query.temp;
     var humidity = req.query.humidity;
     var deviceId = req.query.deviceId;
 
     var client = require('event-hub-client').restClient(
-        "esp8266",
-        "sensorData",
-        "sender",
-        "4B5LSN7kdr6ESKBSn6OtVLom0YjvxOVbjKx8PAVvg6Q=");
+        config.namespace,
+        config.hub,
+        config.sharedAccessKeyName,
+        config.sharedAccessKey);
     console.log("Sending message");
     client.sendMessage('{ "temp": '+ temp +', "humidity": '+ humidity + ', "deviceId": "'+ deviceId + '"}', callback);
     res.send("Message sent");
