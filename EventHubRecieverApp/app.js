@@ -37,6 +37,7 @@ app.get('/sensorData', function (req, res) {
     var temp = req.query.temp;
     var humidity = req.query.humidity;
     var deviceId = req.query.deviceId;
+    var temp = req.query.temp;
 
     var client = require('event-hub-client').restClient(
         config.namespace,
@@ -44,7 +45,7 @@ app.get('/sensorData', function (req, res) {
         config.sharedAccessKeyName,
         config.sharedAccessKey);
     console.log("Sending message");
-    client.sendMessage('{ "temp": '+ temp +', "humidity": '+ humidity + ', "deviceId": "'+ deviceId + '"}', callback);
+    client.sendMessage('{ "temp": '+ temp +', "humidity": '+ humidity + ', "light": ' + light + ', "deviceId": "'+ deviceId + '"}', callback);
     res.send("Message sent");
 });
 
