@@ -37,7 +37,7 @@ app.get('/sensorData', function (req, res) {
     var temp = req.query.temp;
     var humidity = req.query.humidity;
     var deviceId = req.query.deviceId;
-    var temp = req.query.temp;
+    var light = req.query.light;
 
     var client = require('event-hub-client').restClient(
         config.namespace,
